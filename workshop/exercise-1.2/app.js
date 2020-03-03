@@ -15,3 +15,30 @@
 
 // Challenge
 // Make the countdown live...
+
+const body = document.querySelector('body');
+const result = document.getElementById('result');
+
+let hasWon = false;
+
+const time = Math.floor((Math.random() * 5) + 1);
+document.getElementById("time").innerText = time;
+
+
+function clickEvent() {
+    hasWon = true;
+    result.innerText = "You Win!";
+
+    body.removeEventListener("click, clickEvent");
+}
+
+setTimeout (function(){
+    console.log('time up');
+    if (!hasWon) {
+        result.innerText = 'You Lose!';
+        body.removeEventListener('click', clickEvent);
+    }
+}, time * 1000);
+
+console.log(time);
+body.addEventListener('click', clickEvent);

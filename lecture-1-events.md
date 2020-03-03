@@ -99,8 +99,20 @@ All DOM nodes have methods we can use to _notify_ us of an event.
 
 ```js
 // Example
+they take 2 requird arguments
+PLACE the function even when the CALL is triggered 
+1. what I am LISTENING for 
+2. extract the function out  
 
-```
+const button = document.getElementByID('btn');
+function handleOuch = function() {
+    console.log('ouch!');
+}
+// add it
+button.addEventListener('click', handleOuch);
+
+// remove it 
+button.removeEventListener('click', handleOuch);
 
 ---
 
@@ -133,7 +145,7 @@ You can prevent the _default_ action from happening by calling `event.preventDef
 ### target
 
 - The  `target` property refers to the node where they originated. (example)
-- With an `input`, use `event.target.value` to read what was entered into an `input`.
+- With an `input`, use `evtent.target.value` to read what was entered into an `input`.
 
 ---
 
